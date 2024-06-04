@@ -2,7 +2,7 @@
 {% block content %}
 {% load crispy_forms_tags %} 
 {% comment %} {{form | crispy}} {% endcomment %}
-<h1 class='text-center text-primary'>Register user</h1>
+<h1 class='text-center text-primary'>{{type}} user</h1>
 
 
 
@@ -26,7 +26,7 @@
   {{fm.errors | striptags}} 
   
   {%endfor %}
-  <button type="submit" class="btn btn-primary my-3" id="liveToastBtn">Sign up</button>
+  <button type="submit" class="btn btn-primary my-3" id="liveToastBtn">{{type}}</button>
 </form>
 
 
