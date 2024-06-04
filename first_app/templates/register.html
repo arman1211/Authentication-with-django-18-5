@@ -1,0 +1,33 @@
+{% extends "./base.html" %}
+{% block content %}
+{% load crispy_forms_tags %} 
+{% comment %} {{form | crispy}} {% endcomment %}
+<h1 class='text-center text-primary'>Register user</h1>
+
+
+
+
+{% for msg in messages  %}
+<div class="alert alert-{{msg.tags}} w-50 m-auto mt-5" role="alert">
+  {{msg}}
+</div>
+
+{% endfor %}
+
+
+
+<form action="" method="post" class="w-50 m-auto" novalidate>
+  {% csrf_token %} 
+  <!-- {{form|crispy}} -->
+  {% for fm  in form %} 
+  
+  {{fm.label_tag }} 
+  {{fm}} 
+  {{fm.errors | striptags}} 
+  
+  {%endfor %}
+  <button type="submit" class="btn btn-primary my-3" id="liveToastBtn">Sign up</button>
+</form>
+
+
+{% endblock content %}
